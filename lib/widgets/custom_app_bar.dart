@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import '../screens/login_screen.dart';   // ajusta la ruta según tu estructura
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  
+
   const CustomAppBar({super.key, required this.title});
-  
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -17,16 +18,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Builder(
         builder: (context) => IconButton(
           icon: const Icon(Icons.menu),
-          onPressed: () {
-            Scaffold.of(context).openDrawer(); // Abre el menú lateral
-          },
+          onPressed: () => Scaffold.of(context).openDrawer(),
         ),
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.arrow_drop_down),
+          icon: const Icon(Icons.logout),
+          tooltip: 'Cerrar sesión',
           onPressed: () {
-            // Acción para desplegar opciones
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (_) => const LoginScreen()),
+              (_) => false, // elimina toda la pila de rutas
+            );
           },
         ),
       ],

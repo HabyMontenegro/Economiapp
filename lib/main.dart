@@ -1,4 +1,7 @@
+import 'package:economiapp/core/provider/loan_provider.dart';
+import 'package:economiapp/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/login_screen.dart';
 
 void main() {
@@ -10,13 +13,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'EconomiApp',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ChangeNotifierProvider(
+      create: (_) => LoanProvider(),          // <- registra el provider una sola vez
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'EconomiApp',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const LoginScreen(),
       ),
-      home: const LoginScreen(),
     );
   }
 }

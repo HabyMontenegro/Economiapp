@@ -1,0 +1,2 @@
+C:/Users/HABY/Desktop/IngEconomica/economiapp/android/app/.cxx/RelWithDebInfo/4v591w4v/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/HABY/Desktop/IngEconomica/economiapp/android/app/.cxx/RelWithDebInfo/4v591w4v/armeabi-v7a/CMakeFiles/rebuild_cache.dir

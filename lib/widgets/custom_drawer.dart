@@ -105,14 +105,7 @@ class CustomDrawer extends StatelessWidget {
                   },
                 ),
                 const Divider(), // Separador estético
-                ListTile(
-                  leading: const Icon(Icons.exit_to_app, color: Colors.red),
-                  title: const Text("Cerrar sesión"),
-                  onTap: () {
-                    Navigator.pop(context);
-                    // Aquí puedes agregar la lógica para cerrar sesión
-                  },
-                ),
+                
               ],
             ),
           ),
